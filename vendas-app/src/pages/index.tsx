@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Layout } from 'components'
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,8 @@ const Home: React.FC = () => {
       </Head>
 
       Bem vindo!
+
+      <Layout/>
     </div>
   )
 }
