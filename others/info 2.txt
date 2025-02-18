@@ -1,0 +1,20 @@
+
+Instalando yarn
+
+npm install -g yarn
+
+----------------------------
+
+Criando aplicação Next.JS
+
+yarn create next-app --typescript
+
+-----------------------------
+
+yarn dev
+
+yarn build
+
+yarn start
+
+----------------------------

@@ -1,0 +1,34 @@
+GitHub base
+
+https://github.com/cursodsousa/fullstack-react-spring-next
+
+-------------------------
+
+Next JS
+
+https://nextjs.org/
+
+--------------------------
+
+Node JS
+
+https://nodejs.org/pt
+
+node-v14.17.3
+
+npm-v6.14.13
+
+--------------------------
+
+VS Code
+
+https://code.visualstudio.com/
+
+--------------------------
+
+Fira Code (Font)
+
+https://code.visualstudio.com/
+
+----------------------------
+
