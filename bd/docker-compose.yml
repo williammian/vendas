@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:10
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: vendas
+    ports:
+      - '5433:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - dbnetwork
+    
+  pgadmin:
+    image: dpage/pgadmin4:6.21
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - '15433:80'
+    depends_on:
+      - db
+    networks:
+      - dbnetwork
+
+volumes:
+    pgdata:
+
+networks:
+  dbnetwork:
+    driver: bridge

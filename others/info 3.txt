@@ -13,3 +13,39 @@ Spring Initializr
 https://start.spring.io/
 
 ---------------------------
+
+https://www.postgresql.org/download/
+
+----------------------------
+
+https://docs.spring.io/spring-boot/index.html
+
+-------------------------
+
+Acessar o pgadmin via docker-compose
+
+localhost:15433
+
+------------------------
+
+Acessar o banco de dados via docker-compose
+
+Ao adicionar o servidor no pgAdmin, use as seguintes configurações:
+
+Host: db (que é o nome do serviço no docker-compose)
+Porta: 5432 (mesmo que o host esteja acessando via 5433, dentro da rede Docker o PostgreSQL ainda escuta na porta padrão 5432)
+Usuário: postgres
+Senha: postgres
+Database: vendas
+
+-------------------------
+
+Se estiver tentando conectar fora do Docker (por exemplo, com um cliente local), use:
+
+Host: localhost
+Porta: 5433
+Usuário: postgres
+Senha: postgres
+Database: vendas
+
+-------------------------

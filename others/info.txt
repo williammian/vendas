@@ -32,11 +32,5 @@ https://code.visualstudio.com/
 
 ----------------------------
 
-Bulma IO (CSS)
 
-https://bulma.io/
-
-yarn add bulma@0.9.2
-
-----------------------------
 
