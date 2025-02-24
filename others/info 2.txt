@@ -59,3 +59,17 @@ Axios
 yarn add axios@0.21.1
 
 ----------------------------
+
+Yup
+
+https://github.com/jquense/yup
+
+yarn add yup@0.32.9
+
+----------------------------
+
+Extensão JSON Viewer
+
+https://chromewebstore.google.com/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=pt-BR
+
+----------------------------
