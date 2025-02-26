@@ -73,3 +73,17 @@ Extensão JSON Viewer
 https://chromewebstore.google.com/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=pt-BR
 
 ----------------------------
+
+SWR
+
+https://swr.vercel.app/pt-BR
+
+yarn add swr@0.5.6
+
+---------------------------
+
+Pure CSS Loaders
+
+https://loading.io/css/
+
+--------------------------
