@@ -5,8 +5,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,10 +29,21 @@ public class ProdutoController {
 	private ProdutoRepository repository;
 	
 	@GetMapping
-	public List<ProdutoFormRequest> getLista(){
-		return repository.findAll().stream()
+	public List<ProdutoFormRequest> getLista() {
+		return repository.findAll(Sort.by(Sort.Direction.ASC, "id")).stream()
 				.map(ProdutoFormRequest::fromModel)
 				.collect(Collectors.toList());
+	}
+	
+	@GetMapping("{id}")
+	public ResponseEntity<ProdutoFormRequest> getById(@PathVariable Long id) {
+		Optional<Produto> produtoExistente = repository.findById(id);
+		if(produtoExistente.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		var produto = produtoExistente.map(ProdutoFormRequest::fromModel).get();
+		return ResponseEntity.ok(produto);
 	}
 
 	@PostMapping
@@ -41,7 +54,7 @@ public class ProdutoController {
 	}
 	
 	@PutMapping("{id}")
-	public ResponseEntity<Void> atualizar(@PathVariable Long id, @RequestBody ProdutoFormRequest produto ) {
+	public ResponseEntity<Void> atualizar(@PathVariable Long id, @RequestBody ProdutoFormRequest produto) {
 		Optional<Produto> produtoExistente = repository.findById(id);
 		
 		if(produtoExistente.isEmpty()) {
@@ -53,6 +66,18 @@ public class ProdutoController {
 		repository.save(entidade);
 		
 		return ResponseEntity.ok().build();
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<Void> deletar(@PathVariable Long id) {
+		Optional<Produto> produtoExistente = repository.findById(id);
+		
+		if(produtoExistente.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		repository.delete(produtoExistente.get());
+		return ResponseEntity.noContent().build();
 	}
 	
 }
