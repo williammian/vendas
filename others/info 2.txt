@@ -99,3 +99,20 @@ yarn add formik@2.2.9
 Utils
 
 yarn add @4us-dev/utils@0.0.11
+
+----------------------------
+
+PrimeReact 
+
+https://www.primefaces.org/blog/primereact-3-4-0-released/
+
+yarn add primereact@6.4.0
+
+yarn add react-transition-group@4.4.2
+
+Adicionar no _app.tsx
+
+import 'primereact/resources/primereact.min.css'
+import 'primereact/resources/themes/md-light-indigo/theme.css'
+
+----------------------------
