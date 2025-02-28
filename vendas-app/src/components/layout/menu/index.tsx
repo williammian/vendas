@@ -10,7 +10,7 @@ export const Menu: React.FC = () => {
             <ul className="menu-list">
                 <MenuItem href="/" label="Home"  />
                 <MenuItem href="/consultas/produtos" label="Produtos"  />
-                <MenuItem href="/consultas/clientes" label="Clientes" />
+                <MenuItem href="/cadastros/clientes" label="Clientes" />
                 <MenuItem href="/vendas/nova-venda" label="Venda"  />
                 <MenuItem href="/vendas/relatorio-vendas" label="Relatório"  />
                 {/* <MenuItem onClick={() => signOut()} href="/" label="Sair"  /> */}
