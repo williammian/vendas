@@ -2,6 +2,7 @@ import { Cliente } from 'app/models/clientes'
 import { useFormik } from 'formik'
 import { Input, InputCPF, InputTelefone, InputDate } from 'components'
 import { validationSchema } from './validationSchema'
+import Router from 'next/router'
 
 interface ClienteFormProps {
     cliente: Cliente;
@@ -116,6 +117,13 @@ export const ClienteForm: React.FC<ClienteFormProps> = ({
                         { formik.values.id ? "Atualizar" : "Salvar" }                        
                     </button>
                </div>
+               <div className="control">
+                    <button type="button" 
+                            onClick={e => Router.push("/consultas/clientes")} 
+                            className="button">
+                        Voltar                        
+                    </button>
+                </div>
             </div>          
         </form>
     )

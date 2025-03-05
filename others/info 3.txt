@@ -49,3 +49,72 @@ Senha: postgres
 Database: vendas
 
 -------------------------
+
+localhost:8080/api/clientes?nome=&cpf=
+
+localhost:8080/api/clientes?page=0&size=2
+
+@GetMapping
+public Page<ClienteFormRequest> getLista( 
+	@RequestParam(value = "nome", required = false, defaultValue = "") String nome,
+	@RequestParam(value = "cpf", required = false, defaultValue = "") String cpf,
+	Pageable pageable //page , size
+){
+	return repository
+			.buscarPorNomeCpf("%" + nome + "%", "%" + cpf+ "%", pageable)
+			.map( ClienteFormRequest::fromModel );
+
+}
+	
+/* retorno
+{
+	"content": [
+		{
+			"id": 1,
+			"nome": "Fulando da Silva",
+			"cpf": "123.456.789-33",
+			"dataNascimento": "15/01/2000",
+			"endereco": "Rua Geralda, 500",
+			"email": "fulano@email.com",
+			"telefone": "(11)96325-8744",
+			"cadastro": "28/02/2025"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"sorted": false,
+			"unsorted": true,
+			"empty": true
+		},
+		"offset": 0,
+		"pageSize": 20,
+		"pageNumber": 0,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalPages": 1,
+	"totalElements": 1,
+	"size": 20,
+	"number": 0,
+	"sort": {
+		"sorted": false,
+		"unsorted": true,
+		"empty": true
+	},
+	"first": true,
+	"numberOfElements": 1,
+	"empty": false
+}
+*/
+	
+/*
+@GetMapping
+public List<ClienteFormRequest> getLista(){
+	return repository
+				.findAll()
+				.stream()
+				.map( ClienteFormRequest::fromModel )
+				.collect(Collectors.toList());
+}
+*/

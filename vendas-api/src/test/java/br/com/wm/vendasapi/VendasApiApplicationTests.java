@@ -1,4 +1,4 @@
-package io.github.dougllasfps.vendasapi;
+package br.com.wm.vendasapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
