@@ -113,7 +113,7 @@ export const ClienteForm: React.FC<ClienteFormProps> = ({
            </div>   
            <div className="field is-grouped">
                <div className="control is-link">
-                    <button type="submit" className="button">
+                    <button type="submit" className="button is-success">
                         { formik.values.id ? "Atualizar" : "Salvar" }                        
                     </button>
                </div>

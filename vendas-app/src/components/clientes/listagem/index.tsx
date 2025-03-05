@@ -41,6 +41,15 @@ export const ListagemClientes: React.FC = () => {
         initialValues: { nome: '', cpf: '' }
     })
 
+    /*
+    const formik = useFormik<ConsultaClientesForm>({
+        onSubmit: handleSubmit,
+        initialValues: { nome: '', cpf: '' }
+    });
+
+    const { handleSubmit: formikSubmit, values: filtro, handleChange } = formik;
+    */
+
     const handlePage = (event?: DataTablePageParams) => {
         setLoading(true)
         service.find(filtro.nome, filtro.cpf, event?.page ?? 0, event?.rows ?? 10)
