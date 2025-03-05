@@ -116,3 +116,13 @@ import 'primereact/resources/primereact.min.css'
 import 'primereact/resources/themes/md-light-indigo/theme.css'
 
 ----------------------------
+
+Primeflex
+
+yarn add primeflex@2.0.0
+
+Adicionar no _app.tsx
+
+import 'primeflex/primeflex.css'
+
+-----------------------------
