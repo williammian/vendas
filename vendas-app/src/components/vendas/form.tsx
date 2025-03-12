@@ -31,6 +31,8 @@ function formatarMoneySemPrefixo(valor: number) {
 
 interface VendasFormProps {
     onSubmit: (venda: Venda) => void;
+    onNovaVenda: () => void;
+    vendaRealizada: boolean;
 }
 
 const formScheme: Venda = {
@@ -41,7 +43,9 @@ const formScheme: Venda = {
 }
 
 export const VendasForm: React.FC<VendasFormProps> = ({
-    onSubmit
+    onSubmit,
+    onNovaVenda,
+    vendaRealizada
 }) => {
 
     const formasPagamento: String[] = ["DINHEIRO", "CARTAO"];
@@ -174,6 +178,13 @@ export const VendasForm: React.FC<VendasFormProps> = ({
         }
     }
 
+    const realizarNovaVenda = () => {
+        onNovaVenda();
+        formik.resetForm();
+        formik.setFieldValue("itens", [])
+        formik.setFieldTouched("itens", false)
+    }
+
     return (
         <form onSubmit={formik.handleSubmit}>
             <div className="p-fluid">
@@ -245,7 +256,7 @@ export const VendasForm: React.FC<VendasFormProps> = ({
                                 }
 
                                 return (
-                                    <Button type="button" label="Excluir" onClick={handleRemoverItem} />
+                                    <Button type="button" label="Excluir" onClick={handleRemoverItem} className="p-button-danger"/>
                                 )
                             }} />
                             <Column field="produto.id" header="Código" />
@@ -308,7 +319,14 @@ export const VendasForm: React.FC<VendasFormProps> = ({
                     </div>
 
                 </div>  
-                <Button type="submit" label="Finalizar" />
+                
+                {!vendaRealizada &&
+                    <Button type="submit" label="Finalizar" />
+                }
+                {vendaRealizada && 
+                    <Button type="button" onClick={realizarNovaVenda} label="Nova Venda" className="p-button-success" />
+                }
+
             </div>
             <Dialog header="Atenção!" position="top"
                     visible={!!mensagem} 
