@@ -1,6 +1,7 @@
 package br.com.wm.vendasapi.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -43,5 +45,13 @@ public class Venda {
 	
 	@Column
 	private BigDecimal total;
+	
+	@Column(name = "data_venda")
+	private LocalDateTime dataCadastro;
+	
+	@PrePersist
+	public void prePersist() {
+		setDataCadastro(LocalDateTime.now());
+	}
 	
 }

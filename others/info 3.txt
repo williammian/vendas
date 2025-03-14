@@ -118,3 +118,29 @@ public List<ClienteFormRequest> getLista(){
 				.collect(Collectors.toList());
 }
 */
+
+-----------------------------------
+
+JaspersoftStudio 6.2.3
+
+https://community.jaspersoft.com/download-jaspersoft/community-edition/
+
+https://sourceforge.net/projects/jasperreports/files/archive/jasperreports/
+
+https://jaspersoft-studio.softonic.com.br/?utm_source=chatgpt.com
+
+https://www.filehorse.com/download-jaspersoft-studio/download/#google_vignette
+
+-----------------------------------
+
+Select base do relatório
+
+select 
+	v.id as codigo, 
+	c.nome as nomeCliente,
+	v.total as total,
+	v.forma_pagamento
+from venda as v
+join cliente as c on c.id = v.id_cliente
+
+-----------------------------------
