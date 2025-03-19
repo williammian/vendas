@@ -126,3 +126,13 @@ Adicionar no _app.tsx
 import 'primeflex/primeflex.css'
 
 -----------------------------
+
+Chart.js
+
+https://www.chartjs.org/
+
+yarn add chart.js@3.5.0
+
+// ou 3.4.1
+
+-----------------------------
