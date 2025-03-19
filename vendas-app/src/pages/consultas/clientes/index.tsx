@@ -1,3 +1,9 @@
-import { ListagemClientes  } from 'components'
+import { ListagemClientes, RotaAutenticada  } from 'components'
 
-export default ListagemClientes
+export default function ListagemClientesPage() {
+    return(
+        <RotaAutenticada>
+            <ListagemClientes />
+        </RotaAutenticada>
+    )
+}

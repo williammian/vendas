@@ -1,3 +1,9 @@
-import { Vendas } from 'components'
+import { Vendas, RotaAutenticada } from 'components'
 
-export default Vendas;
+export default function VendasPage(){
+    return (
+        <RotaAutenticada>
+            <Vendas />
+        </RotaAutenticada>
+    )
+};

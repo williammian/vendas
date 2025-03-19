@@ -1,5 +1,5 @@
 import Link from 'next/link'
-//import { signOut } from 'next-auth/client'
+import { signOut } from 'next-auth/client'
 
 export const Menu: React.FC = () => {
     return (
@@ -13,7 +13,7 @@ export const Menu: React.FC = () => {
                 <MenuItem href="/consultas/clientes" label="Clientes" />
                 <MenuItem href="/vendas/nova-venda" label="Venda"  />
                 <MenuItem href="/vendas/relatorio-vendas" label="Relatório"  />
-                {/* <MenuItem onClick={() => signOut()} href="/" label="Sair"  /> */}
+                <MenuItem onClick={() => signOut()} href="/" label="Sair"  />
             </ul>
         </aside>
     )
