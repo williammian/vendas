@@ -3,8 +3,6 @@ vendas-api/target/
 vendas-app/node_modules/
 vendas-app/.next/
 
-others/[...nextauth].tsx
-
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
