@@ -144,3 +144,72 @@ from venda as v
 join cliente as c on c.id = v.id_cliente
 
 -----------------------------------
+
+Build
+
+Botão direito na aplicação > Run As > Maven Clean
+
+mvn clean
+
+Botão direito na aplicação > Run As > Maven Install
+
+mvn install -DskipTests
+
+Arquivo jar na pasta target/vendas-api-0.0.1-SNAPSHOT.jar
+
+Nome gerado com artifactId concatenado com version
+Para alterar, ir no pom.xml, em build, adicionar a tag <finalName>${project.artifactId}</finalName>
+
+-----------------------------------
+
+Rodando jar
+
+linha de comando até a pasta em que está o jar (/target)
+
+sem perfil
+java -jar vendas-api.jar 
+
+com perfil
+java -jar -Dspring.profiles.active=prod vendas-api.jar
+
+java -jar -Dspring.profiles.active=hom vendas-api.jar
+
+------------------------------------
+
+Maven
+
+maven.apache.org
+
+Download
+
+Binary zip archive
+
+Descompactar na máquina
+
+Configurar a variável de ambiente para a pasta do maven (raiz em que está a pasta bin)
+M2_HOME
+pasta do maven
+
+Adicionar na variável Path
+Editar
+Novo
+%M2_HOME%\bin
+
+Testando no console
+digite
+mvn -v
+
+------------------------------------
+
+Heroku
+
+Na raiz do projeto criar o arquivo Procfile
+
+web: java -Dserver.port=$PORT -Dspring.profiles.active=prod -jar target/vendas-api.jar
+
+Na raiz do projeto criar o arquivo system.properties
+
+java.runtime.version=11
+
+-------------------------------------
+

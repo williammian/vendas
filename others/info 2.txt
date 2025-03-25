@@ -184,3 +184,49 @@ User Management
 Users
 
 -----------------------------
+
+Environment Variables
+
+https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables
+
+-----------------------------
+
+Rodando em desenvolvimento
+
+yarn dev (ou next dev)
+
+----------------------------
+
+Rodando em produção
+
+yarn build (ou next build)
+
+yarn start (ou next start)
+
+arquivos do build gerados na pasta .next
+
+servir executando o node
+
+obs 1: ao rodar o build, estar com a API rodando
+
+obs 2: também configurar a autenticação de produção nos servidores GitHub e Auth0
+
+----------------------------
+
+Deploy na Vercel
+
+https://vercel.com/
+
+Download Vercel CLI
+
+npm i -g vercel
+
+vercel login
+
+Na raiz da aplicação:
+vercel
+seguir os passos
+
+-----------------------------
+
+
